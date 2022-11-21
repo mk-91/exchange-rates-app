@@ -7,10 +7,10 @@ const HomePage = () => {
   axios
     .get(`https://api.nbp.pl/api/exchangerates/tables/C/`)
     .then((response) => {
-        setExchangeRates(response.data.rates);
+      setExchangeRates(response.data.rates);
     })
     .catch((err) => console.error(err.message));
-    
+
   return <div>HomePage</div>;
 };
 
