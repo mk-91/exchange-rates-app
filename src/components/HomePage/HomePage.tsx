@@ -12,6 +12,7 @@ const HomePage = () => {
       })
       .catch((err) => console.error(err.message));
   }, []);
+
   return <div>HomePage</div>;
 };
 
