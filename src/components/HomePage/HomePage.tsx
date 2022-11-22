@@ -13,7 +13,7 @@ import {
 import { HomePageObj } from '../../helpers/interfaces';
 
 const HomePage = () => {
-  const [exchangeRates, setExchangeRates] = useState([]);
+  const [exchangeRates, setExchangeRates] = useState<HomePageObj[]>([]);
 
   useEffect(() => {
     axios
@@ -25,11 +25,12 @@ const HomePage = () => {
 
     console.log(exchangeRates);
 
-    /* if (exchangeRates.length !== 0) {
-      const euro: HomePageObj = exchangeRates[3];
-      const euroName = euro.bid;
-      console.log(euroName);
-    } */
+    if (exchangeRates.length !== 0) {
+      const eur: HomePageObj = exchangeRates[3];
+      const eurName = eur.code;
+      const eurAsk = eur.ask;
+      const eurBid = eur.bid;
+    }
   }, []);
 
   return (
@@ -43,7 +44,9 @@ const HomePage = () => {
           </Grid>
           <Grid container xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
-              <Divider></Divider>
+              <Divider>
+                {exchangeRates.length !== 0 && exchangeRates[3].code}
+              </Divider>
               <Typography>
                 kupno: {exchangeRates.length !== 0 && exchangeRates[3].bid} PLN
               </Typography>
@@ -55,7 +58,9 @@ const HomePage = () => {
           </Grid>
           <Grid container xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
-              <Divider>USD</Divider>
+              <Divider>
+                {exchangeRates.length !== 0 && exchangeRates[0].code}
+              </Divider>
               <Typography>
                 kupno: {exchangeRates.length !== 0 && exchangeRates[0].bid} PLN
               </Typography>
@@ -67,7 +72,9 @@ const HomePage = () => {
           </Grid>
           <Grid container xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
-              <Divider>CHF</Divider>
+              <Divider>
+                {exchangeRates.length !== 0 && exchangeRates[5].code}
+              </Divider>
               <Typography>
                 kupno: {exchangeRates.length !== 0 && exchangeRates[5].bid} PLN
               </Typography>
@@ -79,7 +86,9 @@ const HomePage = () => {
           </Grid>
           <Grid container xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
-              <Divider>GBP</Divider>
+              <Divider>
+                {exchangeRates.length !== 0 && exchangeRates[6].code}
+              </Divider>
               <Typography>
                 kupno: {exchangeRates.length !== 0 && exchangeRates[6].bid} PLN
               </Typography>
