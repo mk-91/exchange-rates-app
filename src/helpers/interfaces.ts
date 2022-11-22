@@ -4,3 +4,8 @@ export interface HomePageObj {
   code: string;
   currency: string;
 }
+
+export interface LoginFormData {
+  email: string;
+  password: string;
+}

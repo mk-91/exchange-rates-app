@@ -94,7 +94,7 @@ const HomePage = () => {
       <Divider />
       <CardActions>
         <Container sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Button variant='contained'>Wszystkie kursy</Button>
+          <Button variant="contained">Wszystkie kursy</Button>
         </Container>
       </CardActions>
     </Card>
