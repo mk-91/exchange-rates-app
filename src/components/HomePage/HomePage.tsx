@@ -22,27 +22,18 @@ const HomePage = () => {
         setExchangeRates(response.data[0].rates);
       })
       .catch((err) => console.error(err.message));
-
-    console.log(exchangeRates);
-
-    if (exchangeRates.length !== 0) {
-      const eur: HomePageObj = exchangeRates[3];
-      const eurName = eur.code;
-      const eurAsk = eur.ask;
-      const eurBid = eur.bid;
-    }
   }, []);
 
   return (
     <Card sx={{ m: '3vh' }}>
       <CardContent>
         <Grid container spacing={1}>
-          <Grid container xs={12}>
+          <Grid item xs={12}>
             <Container>
               <Divider>AKTUALNE KURSY</Divider>
             </Container>
           </Grid>
-          <Grid container xs={3} minWidth={220}>
+          <Grid item xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
               <Divider>
                 {exchangeRates.length !== 0 && exchangeRates[3].code}
@@ -56,7 +47,7 @@ const HomePage = () => {
               </Typography>
             </Container>
           </Grid>
-          <Grid container xs={3} minWidth={220}>
+          <Grid item xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
               <Divider>
                 {exchangeRates.length !== 0 && exchangeRates[0].code}
@@ -70,7 +61,7 @@ const HomePage = () => {
               </Typography>
             </Container>
           </Grid>
-          <Grid container xs={3} minWidth={220}>
+          <Grid item xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
               <Divider>
                 {exchangeRates.length !== 0 && exchangeRates[5].code}
@@ -84,7 +75,7 @@ const HomePage = () => {
               </Typography>
             </Container>
           </Grid>
-          <Grid container xs={3} minWidth={220}>
+          <Grid item xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
               <Divider>
                 {exchangeRates.length !== 0 && exchangeRates[6].code}
