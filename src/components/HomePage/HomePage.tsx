@@ -10,6 +10,7 @@ import {
   Button,
   Divider,
 } from '@mui/material';
+import { HomePageObj } from '../../helpers/interfaces';
 
 const HomePage = () => {
   const [exchangeRates, setExchangeRates] = useState([]);
@@ -21,8 +22,16 @@ const HomePage = () => {
         setExchangeRates(response.data[0].rates);
       })
       .catch((err) => console.error(err.message));
+
+    console.log(exchangeRates);
+
+    /* if (exchangeRates.length !== 0) {
+      const euro: HomePageObj = exchangeRates[3];
+      const euroName = euro.bid;
+      console.log(euroName);
+    } */
   }, []);
-  console.log(exchangeRates);
+
   return (
     <Card sx={{ m: '3vh' }}>
       <CardContent>
@@ -34,7 +43,7 @@ const HomePage = () => {
           </Grid>
           <Grid container xs={3} minWidth={220}>
             <Container sx={{ textAlign: 'center' }}>
-              <Divider>EUR</Divider>
+              <Divider></Divider>
               <Typography>
                 kupno: {exchangeRates.length !== 0 && exchangeRates[3].bid} PLN
               </Typography>
