@@ -1,4 +1,5 @@
 import React from "react";
+import CurrencyConverter from "./components/CurrencyConverter/CurrencyConverter";
 import HomePage from "./components/HomePage/HomePage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,6 +12,7 @@ function App() {
       <HomePage></HomePage>
       <LoginPage></LoginPage>
       <RegisterPage></RegisterPage>
+      <CurrencyConverter />
     </div>
   );
 }
